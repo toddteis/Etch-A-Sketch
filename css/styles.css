@@ -15,7 +15,11 @@
 
 .grid {
     background-color: lightgray;
-    /* border: 1px solid gray; */
+    border: 1px solid gray;
+}
+
+.black {
+    background-color: black;
 }
 
 /* FOOTER */
