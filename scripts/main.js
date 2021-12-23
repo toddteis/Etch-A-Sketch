@@ -1,10 +1,11 @@
 const displayScreen = document.querySelector('.display-screen');
+const reset = document.querySelector('.reset')
 
-setupGrid(100);
+setupGrid(20);
 
 function setupGrid(squares) {
-   const gridSize = squares * squares;
-   const divSize = 500 / squares;
+   let gridSize = squares * squares;
+   let divSize = 500 / squares;
    for (let index = 0; index < gridSize; index++) {
       const div = document.createElement('div');
       div.classList.add('grid');
@@ -20,3 +21,14 @@ function setupGrid(squares) {
       })
    }
 }
+
+reset.addEventListener('click', () => {
+   while (displayScreen.firstChild) {
+      displayScreen.removeChild(displayScreen.firstChild);
+
+   }
+   displayScreen.classList.remove('grid');
+   displayScreen.style.gridTemplateColumns = ``;
+   displayScreen.style.gridTemplateRows = ``;
+   setupGrid(20);
+})
