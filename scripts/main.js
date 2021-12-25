@@ -1,5 +1,5 @@
 const displayScreen = document.querySelector('.display-screen');
-const reset = document.querySelector('.reset')
+const resetBtn = document.querySelector('.reset')
 let gridSlider = document.querySelector('.grid-slider');
 let gridSizeDisplay = document.querySelector('.Grid-Size-Display');
 let currentGridSize = 50;
@@ -8,6 +8,7 @@ setupGrid(currentGridSize);
 gridSlider.oninput = function() {
    gridSizeDisplay.textContent = this.value;
    currentGridSize = this.value;
+   reset();
 }
 
 function setupGrid(squares) {
@@ -29,7 +30,11 @@ function setupGrid(squares) {
    }
 }
 
-reset.addEventListener('click', () => {
+resetBtn.addEventListener('click', () => {
+   reset();
+})
+
+function reset() {
    while (displayScreen.firstChild) {
       displayScreen.removeChild(displayScreen.firstChild);
 
@@ -38,6 +43,6 @@ reset.addEventListener('click', () => {
    displayScreen.style.gridTemplateColumns = ``;
    displayScreen.style.gridTemplateRows = ``;
    setupGrid(currentGridSize);
-})
+}
 
 
