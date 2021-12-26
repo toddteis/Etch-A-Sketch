@@ -2,7 +2,9 @@ const displayScreen = document.querySelector('.display-screen');
 const resetBtn = document.querySelector('.reset')
 let gridSlider = document.querySelector('.grid-slider');
 let gridSizeDisplay = document.querySelector('.Grid-Size-Display');
-let currentGridSize = 50;
+let currentGridSize = 20;
+let sketchMode = 'greys';
+
 setupGrid(currentGridSize);
 
 gridSlider.oninput = function () {
@@ -24,9 +26,11 @@ function setupGrid(squares) {
       let className = `grid${index}`;
       div.classList.add(`${className}`)
       let divNumber = document.querySelector(`.${className}`);
-      divNumber.addEventListener('mouseover', () => {
-         changeColor(divNumber);
-      })
+      if (sketchMode='greys') {
+         divNumber.addEventListener('mouseover', () => {
+            changeColor(divNumber);
+         })
+      }
    }
 }
 
