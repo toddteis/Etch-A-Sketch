@@ -1,12 +1,20 @@
 const displayScreen = document.querySelector('.display-screen');
 const resetBtn = document.querySelector('.reset')
+const colorPicker = document.querySelector('#color-picker');
 let gridSlider = document.querySelector('.grid-slider');
 let gridSizeDisplay = document.querySelector('.Grid-Size-Display');
 let currentGridSize = 20;
 let sketchMode = 'clickAndColor';  // random or greys or clickAndColor
-let selectedColor = '#000000';
+let selectedColor = colorPicker.value;
 
 setupGrid(currentGridSize);
+
+colorPicker.addEventListener('input', watchColorPicker, false);
+colorPicker.addEventListener('change', watchColorPicker, false);
+
+function watchColorPicker(event) {
+   selectedColor = event.target.value;
+}
 
 gridSlider.oninput = function () {
    gridSizeDisplay.textContent = this.value;
