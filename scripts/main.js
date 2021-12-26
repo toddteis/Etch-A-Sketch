@@ -3,7 +3,7 @@ const resetBtn = document.querySelector('.reset')
 let gridSlider = document.querySelector('.grid-slider');
 let gridSizeDisplay = document.querySelector('.Grid-Size-Display');
 let currentGridSize = 20;
-let sketchMode = 'random';
+let sketchMode = 'clickAndColor';  // random or greys or clickAndColor
 
 setupGrid(currentGridSize);
 
@@ -26,9 +26,17 @@ function setupGrid(squares) {
       let className = `grid${index}`;
       div.classList.add(`${className}`)
       let divNumber = document.querySelector(`.${className}`);
-      if (sketchMode='random') {
+      if (sketchMode=='random') {
          divNumber.addEventListener('mouseover', () => {
             randomMode(divNumber);
+         })
+      } else if (sketchMode=='greys') {
+         divNumber.addEventListener('mouseover', () => {
+            greyMode(divNumber);
+         })
+      } else if (sketchMode == 'clickAndColor') {
+         divNumber.addEventListener('click', () => {
+            clickAndColor(divNumber);
          })
       }
    }
@@ -79,6 +87,10 @@ function randomMode(div) {
    let int = Math.floor(totalNumbers * randomNumber);
    let randomColor = '#' + int.toString(16).padStart(6, '0');
    div.style.backgroundColor = randomColor;
+}
+
+function clickAndColor() {
+   console.log('click')
 }
 
 
