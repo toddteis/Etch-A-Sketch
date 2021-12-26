@@ -28,7 +28,7 @@ function setupGrid(squares) {
       let divNumber = document.querySelector(`.${className}`);
       if (sketchMode='greys') {
          divNumber.addEventListener('mouseover', () => {
-            changeColor(divNumber);
+            greyMode(divNumber);
          })
       }
    }
@@ -49,7 +49,7 @@ function reset() {
    setupGrid(currentGridSize);
 }
 
-function changeColor(div) {
+function greyMode(div) {
    if (div.style.backgroundColor == '') {
       div.style.backgroundColor = 'rgba(0,0,0,0.1)';
    } else if (div.style.backgroundColor == 'rgba(0, 0, 0, 0.1)') {
