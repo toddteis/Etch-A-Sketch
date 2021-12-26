@@ -4,6 +4,7 @@ let gridSlider = document.querySelector('.grid-slider');
 let gridSizeDisplay = document.querySelector('.Grid-Size-Display');
 let currentGridSize = 20;
 let sketchMode = 'clickAndColor';  // random or greys or clickAndColor
+let selectedColor = '#000000';
 
 setupGrid(currentGridSize);
 
@@ -89,8 +90,8 @@ function randomMode(div) {
    div.style.backgroundColor = randomColor;
 }
 
-function clickAndColor() {
-   console.log('click')
+function clickAndColor(div) {
+   div.style.backgroundColor = selectedColor;
 }
 
 
