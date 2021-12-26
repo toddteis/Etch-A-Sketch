@@ -3,7 +3,7 @@ const resetBtn = document.querySelector('.reset')
 let gridSlider = document.querySelector('.grid-slider');
 let gridSizeDisplay = document.querySelector('.Grid-Size-Display');
 let currentGridSize = 20;
-let sketchMode = 'greys';
+let sketchMode = 'random';
 
 setupGrid(currentGridSize);
 
@@ -26,9 +26,9 @@ function setupGrid(squares) {
       let className = `grid${index}`;
       div.classList.add(`${className}`)
       let divNumber = document.querySelector(`.${className}`);
-      if (sketchMode='greys') {
+      if (sketchMode='random') {
          divNumber.addEventListener('mouseover', () => {
-            greyMode(divNumber);
+            randomMode(divNumber);
          })
       }
    }
@@ -71,6 +71,11 @@ function greyMode(div) {
    } else {
       div.style.backgroundColor = 'rgba(0,0,0,1)';
    }
+}
+
+function randomMode(div) {
+   let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+   div.style.backgroundColor = randomColor;
 }
 
 
