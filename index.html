@@ -12,12 +12,21 @@
         <main>
             <h1>Etch-A-Sketch</h1>
             <section>
+                <label for="color-picker">background colour</label>
+                <input type="color" id="color-picker" name="color-picker"
+                value="#ffffff">
+                <button class="grid-toggle">Grid Toggle</button><br>
+                <button class="hover">hover</button>
+                <button class="click">click</button><br>
                 <button class="sketch-in-grey">Sketch in greys</button>
                 <button class="sketch-in-random">Sketch in randoms</button>
-                <button class="reset">Reset</button>
+                <button class="click-and-colour">click and colour</button>
+
                 <input type="color" id="color-picker" name="color-picker"
                 value="#000000">
-                <label for="color-picker">Colour Picker</label>
+                <label for="color-picker">Colour Picker</label><br>
+                <button class="reset">Reset</button>
+                <button class="erase">Erase</button>
                 <div class="grid-input">
                     <p>Grid size: <span class="Grid-Size-Display">20</span></p>
                     <input class="grid-slider" type="range" min="20" max="100" value="20">
