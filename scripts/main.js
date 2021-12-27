@@ -6,6 +6,7 @@ let gridSizeDisplay = document.querySelector('.Grid-Size-Display');
 let currentGridSize = 20;
 let sketchMode = 'clickAndColor';  // random or greys or clickAndColor
 let selectedColor = colorPicker.value;
+let mouseOverOrClickMode = 'mouseover'; // click or mouseover
 
 setupGrid(currentGridSize);
 
@@ -19,6 +20,11 @@ function watchColorPicker(event) {
 gridSlider.oninput = function () {
    gridSizeDisplay.textContent = this.value;
    currentGridSize = this.value;
+   reset();
+}
+
+function applyMode(mode) {
+   mouseOverOrClickMode = mode;
    reset();
 }
 
@@ -36,15 +42,15 @@ function setupGrid(squares) {
       div.classList.add(`${className}`)
       let divNumber = document.querySelector(`.${className}`);
       if (sketchMode=='random') {
-         divNumber.addEventListener('mouseover', () => {
+         divNumber.addEventListener(`${mouseOverOrClickMode}`, () => {
             randomMode(divNumber);
          })
       } else if (sketchMode=='greys') {
-         divNumber.addEventListener('mouseover', () => {
+         divNumber.addEventListener(`${mouseOverOrClickMode}`, () => {
             greyMode(divNumber);
          })
       } else if (sketchMode == 'clickAndColor') {
-         divNumber.addEventListener('click', () => {
+         divNumber.addEventListener(`${mouseOverOrClickMode}`, () => {
             clickAndColor(divNumber);
          })
       }

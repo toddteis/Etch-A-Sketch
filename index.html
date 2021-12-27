@@ -13,8 +13,14 @@
             <h1>Etch-A-Sketch</h1>
             <section>
                 <label for="color-picker">background colour</label>
-                <input type="color" id="color-picker" name="color-picker"
-                value="#ffffff">
+                <input type="color" id="bk-color-picker" name="bk-color-picker"
+                value="#444444">
+                <form>
+                    <input type="radio" name="apply-mode" onclick="applyMode(this.value)" value="mouseover" checked>
+                    Mouse over
+                    <input type="radio" name="apply-mode" onclick="applyMode(this.value)" value="click">
+                    Click
+                </form>
                 <button class="grid-toggle">Grid Toggle</button><br>
                 <button class="hover">hover</button>
                 <button class="click">click</button><br>
