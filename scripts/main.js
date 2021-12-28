@@ -4,7 +4,7 @@ const colorPicker = document.querySelector('#color-picker');
 let gridSlider = document.querySelector('.grid-slider');
 let gridSizeDisplay = document.querySelector('.Grid-Size-Display');
 let currentGridSize = 2;
-let sketchMode = 'clickAndColor';  // random or greys or clickAndColor
+let colorMode = 'greys';  // random or greys or clickAndColor
 let selectedColor = colorPicker.value;
 let mouseOverOrClickMode = 'mouseover'; // click or mouseover
 let gridSwitch = 'off'; // on or off
@@ -13,6 +13,11 @@ setupGrid(currentGridSize);
 
 colorPicker.addEventListener('input', watchColorPicker, false);
 colorPicker.addEventListener('change', watchColorPicker, false);
+
+function colorModeSelector(para) {
+   colorMode = para;
+   console.log(colorMode);
+}
 
 function displayGrid(para) {
    gridSwitch = para;
@@ -54,20 +59,20 @@ function setupGrid(squares) {
       let className = `grid${index}`;
       div.classList.add(`${className}`)
       let divNumber = document.querySelector(`.${className}`);
-      if (sketchMode=='random') {
+      if (colorMode=='random') {
          divNumber.addEventListener(`${mouseOverOrClickMode}`, () => {
             randomMode(divNumber);
          })
-      } else if (sketchMode=='greys') {
+      } else if (colorMode=='greys') {
          divNumber.addEventListener(`${mouseOverOrClickMode}`, () => {
             greyMode(divNumber);
          })
-      } else if (sketchMode == 'clickAndColor') {
+      } else if (colorMode == 'clickAndColor') {
          divNumber.addEventListener(`${mouseOverOrClickMode}`, () => {
             clickAndColor(divNumber);
          })
       }
-   }
+   }  
 }
 
 resetBtn.addEventListener('click', () => {
