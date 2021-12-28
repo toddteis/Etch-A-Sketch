@@ -30,17 +30,16 @@
                         <input type="radio" name="display-grid" onclick="displayGrid(this.value)" value="off" checked>
                         Off
                     </fieldset>
+                    <fieldset>
+                        <legend>Sketch in:</legend>
+                        <input type="radio" name="sketch-in" onclick="sketchIn(this.value)" value="greys" checked>Greys
+                        <input type="radio" name="sketch-in" onclick="sketchIn(this.value)" value="random">Random
+                        <input type="radio" name="sketch-in" onclick="sketchIn(this.value)" value="color">Colour
+                        <input type="color" id="color-picker" name="color-picker"
+                        value="#000000">
+                        <label for="color-picker">Colour Picker</label>
+                    </fieldset>
                 </form>
-                <button class="grid-toggle">Grid Toggle</button><br>
-                <button class="hover">hover</button>
-                <button class="click">click</button><br>
-                <button class="sketch-in-grey">Sketch in greys</button>
-                <button class="sketch-in-random">Sketch in randoms</button>
-                <button class="click-and-colour">click and colour</button>
-
-                <input type="color" id="color-picker" name="color-picker"
-                value="#000000">
-                <label for="color-picker">Colour Picker</label><br>
                 <button class="reset">Reset</button>
                 <button class="erase">Erase</button>
                 <div class="grid-input">
