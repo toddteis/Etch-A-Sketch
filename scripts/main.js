@@ -3,15 +3,28 @@ const resetBtn = document.querySelector('.reset')
 const colorPicker = document.querySelector('#color-picker');
 let gridSlider = document.querySelector('.grid-slider');
 let gridSizeDisplay = document.querySelector('.Grid-Size-Display');
-let currentGridSize = 20;
+let currentGridSize = 2;
 let sketchMode = 'clickAndColor';  // random or greys or clickAndColor
 let selectedColor = colorPicker.value;
 let mouseOverOrClickMode = 'mouseover'; // click or mouseover
+let gridSwitch = 'off'; // on or off
 
 setupGrid(currentGridSize);
 
 colorPicker.addEventListener('input', watchColorPicker, false);
 colorPicker.addEventListener('change', watchColorPicker, false);
+
+function displayGrid(para) {
+   gridSwitch = para;
+   const allGridDivs = displayScreen.childNodes;
+   for (let index = 0; index < allGridDivs.length; index++) {
+      const element = allGridDivs[index];
+      const lowerCaseElement = element.nodeName.toLowerCase();
+      if(lowerCaseElement == 'div') {
+         element.classList.toggle('show-grid');
+      }
+   }
+}
 
 function watchColorPicker(event) {
    selectedColor = event.target.value;
@@ -70,6 +83,9 @@ function reset() {
    displayScreen.style.gridTemplateColumns = ``;
    displayScreen.style.gridTemplateRows = ``;
    setupGrid(currentGridSize);
+   if(gridSwitch === 'on') {
+      displayGrid('on');
+   }
 }
 
 function greyMode(div) {

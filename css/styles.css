@@ -18,6 +18,10 @@
     /* border: 1px solid gray; */
 }
 
+.show-grid {
+    border: 1px solid cadetblue;
+}
+
 .black {
     background-color: black;
 }

@@ -16,10 +16,20 @@
                 <input type="color" id="bk-color-picker" name="bk-color-picker"
                 value="#444444">
                 <form>
-                    <input type="radio" name="apply-mode" onclick="applyMode(this.value)" value="mouseover" checked>
-                    Mouse over
-                    <input type="radio" name="apply-mode" onclick="applyMode(this.value)" value="click">
-                    Click
+                    <fieldset>
+                        <legend>Apply Mode:</legend>
+                        <input type="radio" name="apply-mode" onclick="applyMode(this.value)" value="mouseover" checked>
+                        Mouse over
+                        <input type="radio" name="apply-mode" onclick="applyMode(this.value)" value="click">
+                        Click
+                    </fieldset>
+                    <fieldset>
+                        <legend>Grid:</legend>
+                        <input type="radio" name="display-grid" onclick="displayGrid(this.value)" value="on">
+                        On
+                        <input type="radio" name="display-grid" onclick="displayGrid(this.value)" value="off" checked>
+                        Off
+                    </fieldset>
                 </form>
                 <button class="grid-toggle">Grid Toggle</button><br>
                 <button class="hover">hover</button>
@@ -34,8 +44,8 @@
                 <button class="reset">Reset</button>
                 <button class="erase">Erase</button>
                 <div class="grid-input">
-                    <p>Grid size: <span class="Grid-Size-Display">20</span></p>
-                    <input class="grid-slider" type="range" min="20" max="100" value="20">
+                    <p>Grid size: <span class="Grid-Size-Display">2</span></p>
+                    <input class="grid-slider" type="range" min="2" max="100" value="2">
                 </div>
             </section>
 
