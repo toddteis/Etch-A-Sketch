@@ -14,9 +14,18 @@ setupGrid(currentGridSize);
 colorPicker.addEventListener('input', watchColorPicker, false);
 colorPicker.addEventListener('change', watchColorPicker, false);
 
+function colorModeSwitcher(div) {
+      if (colorMode =='random') {
+            randomMode(div);
+         } else if (colorMode =='greys') {
+            greyMode(div);
+      } else if (colorMode == 'clickAndColor') {
+            clickAndColor(div);
+         }
+}
+
 function colorModeSelector(para) {
    colorMode = para;
-   console.log(colorMode);
 }
 
 function displayGrid(para) {
@@ -59,19 +68,10 @@ function setupGrid(squares) {
       let className = `grid${index}`;
       div.classList.add(`${className}`)
       let divNumber = document.querySelector(`.${className}`);
-      if (colorMode=='random') {
-         divNumber.addEventListener(`${mouseOverOrClickMode}`, () => {
-            randomMode(divNumber);
-         })
-      } else if (colorMode=='greys') {
-         divNumber.addEventListener(`${mouseOverOrClickMode}`, () => {
-            greyMode(divNumber);
-         })
-      } else if (colorMode == 'clickAndColor') {
-         divNumber.addEventListener(`${mouseOverOrClickMode}`, () => {
-            clickAndColor(divNumber);
-         })
-      }
+      
+      divNumber.addEventListener(`${mouseOverOrClickMode}`, () => {
+         colorModeSwitcher(divNumber);
+      })
    }  
 }
 
