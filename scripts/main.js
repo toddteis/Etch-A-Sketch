@@ -1,11 +1,13 @@
 const displayScreen = document.querySelector('.display-screen');
 const resetBtn = document.querySelector('.reset')
 const colorPicker = document.querySelector('#color-picker');
+const bkColorPicker = document.querySelector('#bk-color-picker');
 let gridSlider = document.querySelector('.grid-slider');
 let gridSizeDisplay = document.querySelector('.Grid-Size-Display');
 let currentGridSize = 2;
 let colorMode = 'greys';  // random or greys or clickAndColor
 let selectedColor = colorPicker.value;
+let bkSelectedColor = bkColorPicker.value;
 let mouseOverOrClickMode = 'mouseover'; // click or mouseover
 let gridSwitch = 'off'; // on or off
 
@@ -13,6 +15,9 @@ setupGrid(currentGridSize);
 
 colorPicker.addEventListener('input', watchColorPicker, false);
 colorPicker.addEventListener('change', watchColorPicker, false);
+
+bkColorPicker.addEventListener('input', watchBkColorPicker, false);
+bkColorPicker.addEventListener('change', watchBkColorPicker, false);
 
 function colorModeSwitcher(div) {
       if (colorMode =='random') {
@@ -44,6 +49,11 @@ function watchColorPicker(event) {
    selectedColor = event.target.value;
 }
 
+function watchBkColorPicker(event) {
+   bkSelectedColor = event.target.value;
+   displayScreen.style.backgroundColor = event.target.value;
+}
+
 gridSlider.oninput = function () {
    gridSizeDisplay.textContent = this.value;
    currentGridSize = this.value;
@@ -59,7 +69,7 @@ function setupGrid(squares) {
    let divSize = 500 / squares;
    for (let index = 0; index < gridSize; index++) {
       const div = document.createElement('div');
-      div.classList.add('grid');
+      // div.classList.add('grid');
       displayScreen.style.gridTemplateColumns = `repeat(${squares}, ${divSize}px)`;
       displayScreen.style.gridTemplateRows = `repeat(${squares}, ${divSize}px)`;
       displayScreen.appendChild(div);
@@ -98,6 +108,7 @@ function reset() {
    if(gridSwitch === 'on') {
       displayGrid('on');
    }
+   displayScreen.style.backgroundColor = '';
 }
 
 function greyMode(div) {
