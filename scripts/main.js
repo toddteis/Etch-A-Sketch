@@ -101,27 +101,51 @@ function reset() {
 }
 
 function greyMode(div) {
-   if (div.style.backgroundColor == '') {
+   const isAGrey =isDivAGrey(div) //true or false;
+   if ( isAGrey == false ) {
       div.style.backgroundColor = 'rgba(0,0,0,0.1)';
    } else if (div.style.backgroundColor == 'rgba(0, 0, 0, 0.1)') {
-      div.style.backgroundColor = 'rgba(0,0,0,0.2)';
+      div.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
    } else if (div.style.backgroundColor == 'rgba(0, 0, 0, 0.2)') {
-      div.style.backgroundColor = 'rgba(0,0,0,0.3)';
+      div.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
    } else if (div.style.backgroundColor == 'rgba(0, 0, 0, 0.3)') {
-      div.style.backgroundColor = 'rgba(0,0,0,0.4)';
+      div.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
    } else if (div.style.backgroundColor == 'rgba(0, 0, 0, 0.4)') {
-      div.style.backgroundColor = 'rgba(0,0,0,0.5)';
+      div.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
    } else if (div.style.backgroundColor == 'rgba(0, 0, 0, 0.5)') {
-      div.style.backgroundColor = 'rgba(0,0,0,0.6)';
+      div.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
    } else if (div.style.backgroundColor == 'rgba(0, 0, 0, 0.6)') {
-      div.style.backgroundColor = 'rgba(0,0,0,0.7)';
+      div.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
    } else if (div.style.backgroundColor == 'rgba(0, 0, 0, 0.7)') {
-      div.style.backgroundColor = 'rgba(0,0,0,0.8)';
+      div.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
    }  else if (div.style.backgroundColor == 'rgba(0, 0, 0, 0.8)') {
-      div.style.backgroundColor = 'rgba(0,0,0,0.9)';
+      div.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
    } else {
-      div.style.backgroundColor = 'rgba(0,0,0,1)';
+      div.style.backgroundColor = 'rgba(0, 0, 0, 1)';
    }
+}
+
+function isDivAGrey(div) {
+   const divBgColor = div.style.backgroundColor;
+   const opacityRange = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
+   let result;
+   if(divBgColor == 'rgb(0, 0, 0)') {
+      result = true;
+   } else {
+      for (let index = 0; index < opacityRange.length; index++) {
+         const element = opacityRange[index];
+         const str = `rgba(0, 0, 0, ${element})`
+   
+         if(divBgColor == str) {
+            result = true;
+            break;
+         } else {
+            result = false;
+         }
+      }
+   }
+
+   return result;
 }
 
 function randomMode(div) {
