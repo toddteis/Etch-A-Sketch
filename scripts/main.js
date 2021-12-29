@@ -26,7 +26,9 @@ function colorModeSwitcher(div) {
             greyMode(div);
       } else if (colorMode == 'clickAndColor') {
             clickAndColor(div);
-         }
+      } else if (colorMode == 'erase') {
+         eraseMode(div);
+      }
 }
 
 function colorModeSelector(para) {
@@ -171,4 +173,6 @@ function clickAndColor(div) {
    div.style.backgroundColor = selectedColor;
 }
 
-
+function eraseMode(div) {
+   div.style.backgroundColor = bkSelectedColor;
+}

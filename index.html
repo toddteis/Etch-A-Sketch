@@ -14,7 +14,7 @@
             <section>
                 <label for="color-picker">background colour</label>
                 <input type="color" id="bk-color-picker" name="bk-color-picker"
-                value="#444444">
+                value="#FFFFFF">
                 <form>
                     <fieldset>
                         <legend>Apply Mode:</legend>
@@ -38,6 +38,7 @@
                         <input type="color" id="color-picker" name="color-picker"
                         value="#000000">
                         <label for="color-picker">Colour Picker</label>
+                        <input type="radio" name="color-mode-selector" onclick="colorModeSelector(this.value)" value="erase">Erase
                     </fieldset>
                 </form>
                 <button class="reset">Reset</button>
