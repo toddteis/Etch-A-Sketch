@@ -52,7 +52,6 @@ gridSlider.oninput = function () {
 
 function applyMode(mode) {
    mouseOverOrClickMode = mode;
-   reset();
 }
 
 function setupGrid(squares) {
@@ -69,8 +68,16 @@ function setupGrid(squares) {
       div.classList.add(`${className}`)
       let divNumber = document.querySelector(`.${className}`);
       
-      divNumber.addEventListener(`${mouseOverOrClickMode}`, () => {
-         colorModeSwitcher(divNumber);
+      divNumber.addEventListener('click', () => {
+         if(mouseOverOrClickMode == 'click') {
+            colorModeSwitcher(divNumber);
+         }
+      })
+
+      divNumber.addEventListener('mouseover', () => {
+         if(mouseOverOrClickMode == 'mouseover') {
+            colorModeSwitcher(divNumber);
+         }
       })
    }  
 }
