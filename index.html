@@ -15,24 +15,31 @@
         <main>
             <h1>Etch-A-Sketch</h1>
             <section>
-                <label for="color-picker">background colour</label>
-                <input type="color" id="bk-color-picker" name="bk-color-picker"
-                value="#FFFFFF">
+
                 <form>
-                    <fieldset>
-                        <legend>Apply Mode:</legend>
-                        <input type="radio" name="apply-mode" onclick="applyMode(this.value)" value="mouseover" checked>
-                        Mouse over
-                        <input type="radio" name="apply-mode" onclick="applyMode(this.value)" value="click">
-                        Click
-                    </fieldset>
-                    <fieldset>
-                        <legend>Grid:</legend>
-                        <input type="radio" name="display-grid" onclick="displayGrid(this.value)" value="on">
-                        On
-                        <input type="radio" name="display-grid" onclick="displayGrid(this.value)" value="off" checked>
-                        Off
-                    </fieldset>
+                    <div class="controls-1">
+                        <fieldset>
+                            <legend class="apply-mode">Apply Mode:</legend>
+                            <input type="radio" name="apply-mode" onclick="applyMode(this.value)" value="mouseover" checked>
+                            Mouse over
+                            <input type="radio" name="apply-mode" onclick="applyMode(this.value)" value="click">
+                            Click
+                        </fieldset>
+                        <fieldset>
+                            <legend>Grid:</legend>
+                            <input type="radio" name="display-grid" onclick="displayGrid(this.value)" value="on">
+                            On
+                            <input type="radio" name="display-grid" onclick="displayGrid(this.value)" value="off" checked>
+                            Off
+                        </fieldset>
+                        <fieldset>
+                            <legend>Background:</legend>
+                            <input type="color" id="bk-color-picker" name="bk-color-picker"
+                            value="#FFFFFF"> Colour Picker
+                        </fieldset>
+                    </div>
+
+
                     <fieldset>
                         <legend>Colour Mode:</legend>
                         <input type="radio" name="color-mode-selector" onclick="colorModeSelector(this.value)" value="greys" checked>Greys
