@@ -15,46 +15,51 @@
         <main>
             <h1>Etch-A-Sketch</h1>
             <section>
-
                 <form>
                     <div class="controls-1">
-                        <fieldset>
+                        <fieldset class="top-controls">
                             <legend class="apply-mode">Apply Mode:</legend>
                             <input type="radio" name="apply-mode" onclick="applyMode(this.value)" value="mouseover" checked>
                             Mouse over
                             <input type="radio" name="apply-mode" onclick="applyMode(this.value)" value="click">
                             Click
                         </fieldset>
-                        <fieldset>
-                            <legend>Grid:</legend>
-                            <input type="radio" name="display-grid" onclick="displayGrid(this.value)" value="on">
-                            On
-                            <input type="radio" name="display-grid" onclick="displayGrid(this.value)" value="off" checked>
-                            Off
-                        </fieldset>
-                        <fieldset>
+                        <fieldset  class="top-controls">
                             <legend>Background:</legend>
                             <input type="color" id="bk-color-picker" name="bk-color-picker"
                             value="#FFFFFF"> Colour Picker
                         </fieldset>
                     </div>
-
-
-                    <fieldset>
+                    <fieldset class="controls-2">
                         <legend>Colour Mode:</legend>
-                        <input type="radio" name="color-mode-selector" onclick="colorModeSelector(this.value)" value="greys" checked>Greys
-                        <input type="radio" name="color-mode-selector" onclick="colorModeSelector(this.value)" value="random">Random
-                        <input type="radio" name="color-mode-selector" onclick="colorModeSelector(this.value)" value="clickAndColor">Colour
+                        <input type="radio" name="color-mode-selector" onclick="colorModeSelector(this.value)" value="erase">
+                        <label for="">Erase</label>
+                        <input type="radio" name="color-mode-selector" onclick="colorModeSelector(this.value)" value="greys" checked>
+                        <label for=""></label>Greys</label>   
+                        <input type="radio" name="color-mode-selector" onclick="colorModeSelector(this.value)" value="random">
+                        <label for=""></label>Random</label>
+                        <input type="radio" name="color-mode-selector" onclick="colorModeSelector(this.value)" value="clickAndColor">
+                        <label for=""></label>Colour</label>
                         <input type="color" id="color-picker" name="color-picker"
                         value="#000000">
                         <label for="color-picker">Colour Picker</label>
-                        <input type="radio" name="color-mode-selector" onclick="colorModeSelector(this.value)" value="erase">Erase
+
                     </fieldset>
                 </form>
-                <button class="reset">Reset</button>
-                <div class="grid-input">
-                    <p>Grid size: <span class="Grid-Size-Display">50</span></p>
-                    <input class="grid-slider" type="range" min="10" max="100" value="50">
+                <div class="grid-input controls-3">
+                    <fieldset class="bottom-controls">
+                        <legend>Grid lines:</legend>
+                        <input type="radio" name="display-grid" onclick="displayGrid(this.value)" value="on">
+                        On
+                        <input type="radio" name="display-grid" onclick="displayGrid(this.value)" value="off" checked>
+                        Off
+                    </fieldset>
+                    <fieldset class="bottom-controls">
+                        <legend>Grid size:</legend>
+                        <span class="Grid-Size-Display">50</span>
+                        <input class="grid-slider" type="range" min="10" max="100" value="50">
+                    </fieldset>
+                    <button class="reset">Reset</button>               
                 </div>
             </section>
 

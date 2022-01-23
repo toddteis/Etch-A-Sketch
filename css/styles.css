@@ -4,6 +4,7 @@
 
 html {
     font-family: 'Lato', sans-serif;
+    background-color: #979b97;
 }
 
 
@@ -15,32 +16,85 @@ body {
 }
 
 main {
+    margin-top: 30px;
     width: 600px;
-    height: 900px;
+    height: 860px;
     background-color: bisque;
     padding: 20px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: top;
+}
+
+h1 {
+    margin: 20px;
 }
 
 .controls-1 {
     display: flex;
+    width: 512px;
+    margin-bottom: 10px;
 }
 
+.top-controls {
+    width: 254px;
+}
+
+.controls-2 {
+    width: 508px;
+    margin-bottom: 10px;
+}
+
+
+#color-picker {
+    margin-left: 20px;
+}
+
+.controls-3 {
+    margin-bottom: 10px;
+}
+
+.bottom-controls {
+    width: 200px;
+}
+ 
 .display-screen {
     width: 508px;
     height: 508px;
-    border: 4px solid black;
+    border: 4px solid #414141;
     border-radius: 4px;
     display: grid;
 }
 
+.grid-input {
+    display: flex;
+}
 
 .show-grid {
-    border: 1px solid cadetblue;
+    border: 1px solid rgb(211, 211, 211);
+}
+
+.Grid-Size-Display {
+    width: 50%;
+}
+
+.grid-input button {
+    height: 49px;
+    width: 100px;
+    margin-top: 9px;
+    background-color: #979b97;
+    border: none;
+    border-radius: 2px;
+    margin-left:2px;
+    color: black;
+    font-size:16px;
+}
+
+.grid-input button:hover {
+    background-color: #b3b9b3;
+    cursor: pointer;
 }
 
 .black {
