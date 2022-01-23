@@ -11,6 +11,8 @@ let bkSelectedColor = bkColorPicker.value;
 let mouseOverOrClickMode = 'mouseover'; // click or mouseover
 let gridSwitch = 'off'; // on or off
 
+displayScreen.style.backgroundColor = '#ffffff';
+
 setupGrid(currentGridSize);
 
 colorPicker.addEventListener('input', watchColorPicker, false);
@@ -110,7 +112,7 @@ function reset() {
    if(gridSwitch === 'on') {
       displayGrid('on');
    }
-   displayScreen.style.backgroundColor = '';
+   displayScreen.style.backgroundColor = '#ffffff';
 }
 
 function greyMode(div) {
